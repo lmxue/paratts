@@ -1,18 +1,18 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>ParaTTS: Context-aware End-to-end Paragraph TTS</title>
+    <title>ParaTTS: Learning linguistic and prosodic cross-sentence information in paragraph-based TTS</title>
   </head>
   <body>
     <article>
       <header>
-        <h1>Audio samples from "ParaTTS: Context-aware End-to-end Paragraph TTS"</h1>
+        <h1>Audio samples of "ParaTTS: Learning linguistic and prosodic cross-sentence information in paragraph-based TTS"</h1>
       </header>
     </article>
 
 
     <div><b>Authors:</b> Liumeng Xue, Lei Xie</div> <br>
-    <div><b>Abstract:</b> Speech synthesis at the sentence level has achieved reasonable naturalness with the help of sequence-to-sequence neural end-to-end approaches. However, it is still very challenging to produce natural paragraph speech due to the limitation of computation resources and the current models' capability of modeling rich contextual information. As for the memory restriction, models can only be trained at sentence level rather than paragraph level directly. As for the model constraint, the context length captured by sequence-to-sequence models is limited. Various attention mechanisms or model variants have been introduced to improve long-term dependency, but the textural structure and prosodic pattern at the paragraph level are discarded. In this work, we propose a context-aware end-to-end paragraph TTS approach to model the rich contextual information explicitly at the paragraph level. In terms of textual context, we utilize a paragraph text encoder to offer paragraph text representation, followed by a multi-head attention to capture the textual context of each sentence in its paragraph.  In terms of prosodic context, we adopt a paragraph prosody encoder at training time and a paragraph prosody predictor at inference time to explicitly model paragraph prosody, followed by a multi-head attention to learn the prosodic context of a sentence in the paragraph. Additionally, sentence position in the paragraph is further used to reinforce the sentence context.. Experimental results show that the proposed approach can produce natural and pleasant paragraph speech. Moreover, we find the proposed model can learn more accurate pause duration between two consecutive sentences and generalize to paragraphs much longer than those seen during training. </div>
+    <div><b>Abstract:</b> Recent advancements in neural end-to-end TTS models have shown high quality, natural synthesized speech in a conventional sentence-based TTS. However, it is still a big challenge to reproduce similar high quality when a whole paragraph is considered in TTS training/inference, where a much larger amount of contextual information needs to be considered in building the corresponding paragraph-based TTS model. To alleviate the difficulty in training, we propose to model the linguistic and prosodic information by considering cross-sentence, embedded structure in paragraph-based TTS training. Three sub-modules, including: linguistics-aware, prosody-aware and sentence-position networks, are trained together with a modified Tacotron2.  Specifically, to learn the information embedded in a paragraph and relations among the corresponding component sentences, we utilize  linguistics-aware and  prosody-aware networks. The information in a paragraph is captured by the encoder and the inter-sentence information in a paragraph is learned with multi-head attention mechanisms. The relative sentence position in a paragraph is explicitly encoded and exploited by a sentence-position network. Trained on a storytelling corpus (4.08 hours), recorded by a female Mandarin Chinese speaker, the proposed TTS model demonstrates that it can produce rather natural and better speech paragraph-wise. The cross-sentence contextual information, such as break and prosodic variations between consecutive sentences, can be better predicted and rendered than the baseline, sentence-based model. Tested on paragraph text, of which the lengths are similar to, longer than, or much longer than the typical paragraph length in the training data, the TTS speech produced by the new model is consistently preferred over the sentence-based baseline system in subjective tests and confirmed in objective measures. </div>
 
 
     <h3>一. Short paragraph</h3>
