@@ -1,87 +1,355 @@
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>ParaTTS: Learning linguistic and prosodic cross-sentence information in paragraph-based TTS</title>
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://leiyi420.github.io/HierarchicalEmoTTS/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>ParaTTS: Learning linguistic and prosodic cross-sentence information in paragraph-based TTS</title>
+<meta name="generator" content="Jekyll v3.9.0">
+<meta property="og:title" content="TODO: title">
+<meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://leiyi420.github.io/CSEmoTransfer">
+<meta property="og:url" content="https://leiyi420.github.io/CSEmoTransfer">
+<meta name="twitter:card" content="summary">
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body>
-    <article>
-      <header>
-        <h1>Audio samples of "ParaTTS: Learning linguistic and prosodic cross-sentence information in paragraph-based TTS"</h1>
-      </header>
-    </article>
-
-
-    <div><b>Authors:</b> Liumeng Xue, Shaofei Zhang, Lei Xie, Frank K. Soong </div> <br>
-    <div><b>Abstract:</b> Recent advancements in neural end-to-end TTS models have shown high quality, natural synthesized speech in a conventional sentence-based TTS. However, it is still a big challenge to reproduce similar high quality when a whole paragraph is considered in TTS training/inference, where a much larger amount of contextual information needs to be considered in building the corresponding paragraph-based TTS model. To alleviate the difficulty in training, we propose to model the linguistic and prosodic information by considering cross-sentence, embedded structure in paragraph-based TTS training. Three sub-modules, including: linguistics-aware, prosody-aware and sentence-position networks, are trained together with a modified Tacotron2.  Specifically, to learn the information embedded in a paragraph and relations among the corresponding component sentences, we utilize  linguistics-aware and  prosody-aware networks. The information in a paragraph is captured by the encoder and the inter-sentence information in a paragraph is learned with multi-head attention mechanisms. The relative sentence position in a paragraph is explicitly encoded and exploited by a sentence-position network. Trained on a storytelling corpus (4.08 hours), recorded by a female Mandarin Chinese speaker, the proposed TTS model demonstrates that it can produce rather natural and better speech paragraph-wise. The cross-sentence contextual information, such as break and prosodic variations between consecutive sentences, can be better predicted and rendered than the baseline, sentence-based model. Tested on paragraph text, of which the lengths are similar to, longer than, or much longer than the typical paragraph length in the training data, the TTS speech produced by the new model is consistently preferred over the sentence-based baseline system in subjective tests and confirmed in objective measures. </div>
-
-
-    <h3>一. Short paragraph</h3>
-
-    <div>
-      <span class="transcript">1.1 故事里有一捆出身高贵的柴火、一个苦命的旧铁罐、一个会报告新闻的菜篮子、一个会讲故事的陶罐、一把会跳舞的火钳，还有一支高傲的鹅毛笔和一把不肯唱歌的茶壶......故事很精彩，所有的人都听得着了迷。于是，国王和王后一致同意把女儿嫁给他。</span>
-      <table>
-        <tr><td>Baseline</td><td><audio controls><source src="samples/base/37-9_6.wav"></audio></td></tr>
-        <tr><td>ParaTTS</td><td><audio controls><source src="samples/paratts/37-9_6.wav"></audio></td></tr>
-        <tr><td>Recording</td><td><audio controls><source src="samples/ori/37-9_6.wav"></audio></td></tr>
-      </table>
-    </div>
- <br>
- 
-    <div>
-      <span class="transcript">1.2 皇帝的马厩里有一只甲虫，他决定去外面的世界闯荡一下。于是它飞到一个可爱的小花园，那里正盛开着美丽的花朵，空气中散发着玫瑰和薰衣草的香味。“你看这里是不是很美呀？”一只可爱的小瓢虫问到。他不停的拍着自己带黑点的红翅膀飞来飞去；“气味多么香甜，花儿多么美丽呀！”“我住的地方比这儿好。”甲虫说到：“你说这里美？可怎么连一堆粪都没有。</span>
-      <table>
-        <tr><td>Baseline</td><td><audio controls><source src="samples/base/42-8_2.wav"></audio></td></tr>
-        <tr><td>ParaTTS</td><td><audio controls><source src="samples/paratts/42-8_2.wav"></audio></td></tr>
-        <tr><td>Recording</td><td><audio controls><source src="samples/ori/42-8_2.wav"></audio></td></tr>
-      </table>
-    </div>
- <br>
- 
-    <div>
-      <span class="transcript">1.3 "一定是花儿在跳舞!"她说。于是小伊达爬下小床，悄悄地走到门口，向屋子里望去。啊，眼前的情景多么有趣呀！房子里没有灯光，月亮透过窗户把屋里照得就像是白天一样。所有的风信子和郁金香都在地板上排成行，花儿们围在一起，快乐地跳着舞，转圈的时候，长长的叶子互相挽着，就像手拉着手。钢琴前坐着一朵很大的百合花，她一会儿头歪向这边，一会儿又歪向那一边，随着音乐的节拍点着头。那些生病的花儿也爬了起来，快乐地跳起舞。</span>
-      <br>
-      <span class="transcript">* Inappropriate pause duration can be found in the baseline.</span>
-      
-      <table>
-        <tr><td>Baseline</td><td><audio controls><source src="samples/base/11-10_8.wav"></audio></td></tr>
-        <tr><td>ParaTTS</td><td><audio controls><source src="samples/paratts/11-10_8.wav"></audio></td></tr>
-        <tr><td>Recording</td><td><audio controls><source src="samples/ori/11-10_8.wav"></audio></td></tr>
-      </table>
-    </div>    
-    
+  <body data-new-gr-c-s-check-loaded="14.1001.0" data-gr-ext-installed="">
+    <section class="page-header">
+    <!-- <h1 class="project-name">ParaTTS: Learning linguistic and prosodic cross-sentence information in paragraph-based TTS</h1> -->
+    <h2 class="project-name">ParaTTS: Learning linguistic and prosodic cross-sentence information in paragraph-based TTS</h2>
     <br>
-    
-    <h3>二. Long paragraph</h3>
+    <h2 class="project-tagline">
+      <center> Liumeng Xue<sup>1</sup>, Frank K. Soong<sup>2</sup>, Shaofei Zhang<sup>3</sup>, Lei Xie<sup>1</sup>  </center> 
+      <br>
+      <center> <sup>1</sup>Audio, Speech and Language Processing Group (ASLP@NPU), School of Computer Science, Northwestern Polytechnical University, Xi’an, China </center>
+      <center> <sup>2</sup>Microsoft Research Asia, Beijing, China </center>
+      <center> <sup>2</sup>Microsoft Azure Speech, Beijing, China </center>
+    </h2>
+    </section>
 
-    <div>
-      <span class="transcript">2.1 “真是你吗？”哲学家说，“我从来没有想过人的影子会变成一个人再回来！”“请告诉我，我要付点什么！”身影说，“我讨厌欠债！”“你不可以这样说！”哲学家说，“你是自由的，我为你的幸福感到高兴！坐下，讲讲这些日子你是怎么过的，在南方我们对面那家人那里，你都看见了些什么！”“行，”身影说，坐了下去。“但是您要答应我，您不要对任何人讲我是您的身影！我在考虑订婚了，我满可以养活好几家子人！”“请放心吧！”哲学家说，“我不会告诉任何人您到底是谁，大丈夫说话算话！”“身影也说话算话！”身影说。真是奇怪，身影简直就是一个真人。他穿着讲究，它的靴子是漆皮的，帽子是压下去成一个平块儿的，还有那玺坠，那金项链和钻石戒指。“现在开始讲吧。”身影说。他用穿着漆皮靴子的腿踩在哲学家新身影的胳膊上，这也许是出于显示自己的傲气，或者是想紧紧地压住它。“您知道那是谁吗？”</span>
-      <table>
-        <tr><td>Baseline</td><td><audio controls><source src="samples/base/3103002.wav"></audio></td></tr>
-        <tr><td>ParaTTS</td><td><audio controls><source src="samples/paratts/3103002.wav"></audio></td></tr>
-      </table>
-    </div>
- <br>
- 
-     <div>
-      <span class="transcript">2.2 干妈是一位高大、友善的女人，长着一副圆笑脸，头发都白了。她的几位女儿漂亮、颀长、苗条，打扮得体。和她们在一起的是一位表哥，他头发金黄，一副络腮胡，一身白衣服。他对贝特蒂的到来表示了特别大的好感。房间桌子上散放着许多书，还有乐谱和画本，阳台面向宽阔的湖面。向来开朗随和的路迪，现在却变得拘谨起来。他觉得时间过得真慢，但是贝蒂却兴致高涨，还说那位表哥是一位完美的绅士。“一个真正的牛皮大王！”路迪说。这是他第一次说出让贝蒂不舒服的话。那个英国小伙送给她一本书，是拜伦《锡永的囚徒》法文译本。“书是一本好书，”路迪说，“但是送书的主人是个纨绔公子，我不喜欢他。”从干妈那里回来后的两天，路迪去磨坊，看到了那个英国人，贝蒂还特别为他烧了一道鳟鱼，这道菜看上去很讲究。英国人跑来这儿干什么，贝蒂还如此招待他？路迪心里酸溜溜的。贝蒂看到他这副模样，却异常地高兴，感到好玩儿。越是这样，她越看清了路迪内心灵魂的优点和弱点。爱情是一场游戏，她现在正在玩弄路迪的感情。路迪越是阴沉着脸，她的眼里便有越多的笑意。其实，这是不对的。</span>
-      <table>
-        <tr><td>Baseline</td><td><audio controls><source src="samples/base/2903002.wav"></audio></td></tr>
-        <tr><td>ParaTTS</td><td><audio controls><source src="samples/paratts/2903002.wav"></audio></td></tr>
-      </table>
-    </div>
- <br>
+<section class="main-content">
+      <!-- <h2 id=""><center>ParaTTS: Learning linguistic and prosodic cross-sentence information in paragraph-based TTS</center></h2>
 
-    <h3>三. Extra-long paragraph</h3>
+<center> Liumeng Xue<sup>1</sup>, Shan Yang<sup>2</sup>, Na Hu<sup>2</sup>, Dan Su<sup>2</sup>, Lei Xie<sup>1</sup>  </center>
+<center> <sup>1</sup>Northwestern Polytechnical University </center>
+<center> <sup>2</sup>Tencent AI Lab </center> -->
 
-    <div>
-      <span class="transcript">3.1 两个姑娘。你曾经看到过一位姑娘没有？这也就是说铺路工人所谓的一位姑娘。她是一种把石头打进土里去的器具。她完全是由木头做成的，下面宽，并且套着几个铁箍。她的上部窄小，有一根棍子穿进去，这就是她的双臂。在放工具的那个屋子里就有这么两个姑娘。她们是跟铲子、卷尺和独轮车住在一起。它们之间流传着一个谣言，说姑娘不再叫做姑娘，而要叫做手槌了。在铺路工人的字眼中，这是对我们从古时起就叫做姑娘的东西起的一个最新、而且也是最正确的名词。在我们人类中间有一种所谓自由女子，比如私立学校的校长、接生娘娘、能用一条腿站着表演的舞蹈家、时装专家、护士等。工具房里的这两位姑娘也把自己归到这类妇女的行列中去。她们是路政局的姑娘。她们决不放弃这个古老的好名称，而让自己被叫做手槌。姑娘是人的称号，她们说，手槌不过是一种物件。我们决不能让人叫作物件这是一种侮辱。我的未婚夫会跟我闹翻的，跟打桩机订了婚的那个顶年轻的姑娘说。打桩机是一个大器具。他能把许多桩打进地里去，因此他是大规模地做姑娘小规模地做的工作。他把我当做一个姑娘才和我订婚，假如我是一个手槌，他是不是还愿意娶我就成了问题。因此我决不改变我的名字。我呢，我宁愿我的两只手折断。年长的那位说。不过，独轮车却有不同的见解，而独轮车却是一个重要的人物，他觉得自己是一辆马车的四分之一，因为它是凭一只轮子走路。我得告诉你们，姑娘这个名称是够平常的了，一点也没手槌这个名称漂亮，因为有这个名字你就可以进入到印章的行列中去。请你想想官印吧，它盖上一个印，就产生法律的效力！要是我处于你们的地位，我宁愿放弃姑娘这个名称。不成，我不会幼稚到干这种事情！年长的那一位说。你们一定没有听到过所谓欧洲的必需品这种东西吧！诚实的老卷尺说。一个人应该适应他的时代和环境。如果法律说姑娘应该改成手槌，那么你就得叫做手槌。一切事情总得有一个尺度！不成，如果必须改变的话，年轻的那一位说，我宁愿改称为小姐，最低限度小姐还带一点姑娘的气味。我宁愿给劈做柴烧。年长的那位姑娘说。最后他们一同去工作。那两位姑娘乘车子因为她们被放在独轮车上。这是一种优待。不过她们仍然被叫做手槌。姑！当她们在铺路石上颠簸着的时候说，姑！她们几乎把姑娘两字整个念出来了，不过她们临时中断，把后面的一个字吞下去了，因为她们觉得没有理睬的必要。她们一直把自己叫做姑娘，同时称赞过去的那些好日子：在那些日子里一切东西都有它们正确的名字，姑娘就叫做姑娘。她们也就成了一对老姑娘，因为那个大器具打桩机真的跟年轻的那位解除了婚约，他不愿意跟一个手槌有什么关系。</span>
-      <table>
-        <tr><td>Baseline</td><td><audio controls><source src="samples/base/7.wav"></audio></td></tr>
-        <tr><td>ParaTTS</td><td><audio controls><source src="samples/paratts/7.wav"></audio></td></tr>
-      </table>
-    </div>
- <br>
- 
- 
-  </body>
-</html>
+<h2>0. Contents</h2>
+<ol>
+  <li><a href="#abstract">Abstract</a></li>
+  <li><a href="#models">Models description</a></li>
+  <li><a href="#short_para">Samples of short paragraphs</a></li>
+  <li><a href="#long_para">Samples of long paragraphs</a></li>
+  <li><a href="#extra_long_para">Samples of extra-long paragraphs</a></li>
+  <li><a href="#summary">Summary</a></li>
+  <!-- <li><a href="#refs">References</a></li> -->
+</ol>
+
+<br>
+<h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
+<p> Recent advancements in neural end-to-end TTS models have shown high-quality, natural synthesized speech in a conventional sentence-based TTS. However, it is still a big challenge to reproduce similar high quality when a whole paragraph is considered in TTS, where a large amount of contextual information needs to be considered in building a paragraph-based TTS model. To alleviate the difficulty in training, we propose to model linguistic and prosodic information by considering cross-sentence, embedded structure in training. Three sub-modules, including linguistics-aware, prosody-aware and sentence-position networks, are trained together with a modified Tacotron2. Specifically, to learn the information embedded in a paragraph and the relations among the corresponding component sentences, we utilize linguistics-aware and prosody-aware networks. The information in a paragraph is captured by encoders and the inter-sentence information in a paragraph is learned with multi-head attention mechanisms. The relative sentence position in a paragraph is explicitly exploited by a sentence-position network. Trained on a storytelling audio-book corpus (4.08 hours), recorded by a female Mandarin Chinese speaker, the proposed TTS model demonstrates that it can produce rather natural and good-quality speech paragraph-wise. The cross-sentence contextual information, such as break and prosodic variations between consecutive sentences, can be better predicted and rendered than sentence-based model. Tested on paragraph texts, of which the lengths are similar to, longer than, or much longer than the typical paragraph length in the training data, the TTS speech produced by the new model is consistently preferred over the sentence-based model in subjective tests and confirmed in objective measures.
+ </p>
+	<center><img src='fig/model_80%_size.png'></center>
+<br><br>
+
+<h2> 2. Models description<a name="models"></a></h2>
+<p><strong>Recordings:</strong> The original samples from the dataset. </p>
+<p><strong>Baseline:</strong> The modified Tacotron2. </p>
+<p><strong>LingTTS:</strong> Baseline with the linguistics-aware network.</p>
+<p><strong>ProsTTS:</strong> Baseline with the prosody-aware network. </p>
+<p><strong>ComTTS:</strong> Baseline with the combination of the linguistics-aware and prosody-aware networks. </p>
+<p><strong>ParaTTS:</strong> ComTTS with the sentence-position network.  </p>
+
+
+<h2>3. Samples of short paragraphs<a name="short_para"></a></h2>
+<!-- <h3>Convert the emotion expresssions from the source speaker to the neutral target speakers without emotional training data.</h3> -->
+<table>
+  <!-- <thead>
+    <tr>
+	  <th style="text-align: center"><strong>Recordings</strong></th>
+	  <th style="text-align: center"><strong>Baseline</strong></th>
+      <th style="text-align: center"><strong>LingTTS</strong></th>
+      <th style="text-align: center"><strong>ProsTTS</strong></th>
+      <th style="text-align: center"><strong>ComTTS</strong></th>
+      <th style="text-align: center"><strong>ParaTTS</strong></th>
+    </tr>
+  </thead> -->
+  <tbody>
+
+	<tr>
+            <td style="text-align: left" colspan=6>3.1 故事里有一捆出身高贵的柴火、一个苦命的旧铁罐、一个会报告新闻的菜篮子、一个会讲故事的陶罐、一把会跳舞的火钳，还有一支高傲的鹅毛笔和一把不肯唱歌的茶壶......故事很精彩，所有的人都听得着了迷。于是，国王和王后一致同意把女儿嫁给他。</td>
+      </tr>        
+      <tr>
+          <th style="text-align: center"><strong>Recordings</strong></th>
+          <th style="text-align: center"><strong>Baseline</strong></th>
+          <th style="text-align: center"><strong>LingTTS</strong></th>
+          <th style="text-align: center"><strong>ProsTTS</strong></th>
+          <th style="text-align: center"><strong>ComTTS</strong></th>
+          <th style="text-align: center"><strong>ParaTTS</strong></th>
+      </tr>
+	<tr>
+            <td style="text-align: left"><audio src="samples/ori/37-9_6.wav" controls="" preload=""></audio></td>
+	          <td style="text-align: left"><audio src="samples/base/37-9_6.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/lingtts/37-9_6.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/prostts/37-9_6.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/comtts/37-9_6.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/paratts/37-9_6.wav" controls="" preload=""></audio></td>
+	</tr>
+
+	<tr>
+            <td style="text-align: left" colspan=6>3.2 皇帝的马厩里有一只甲虫，他决定去外面的世界闯荡一下。于是它飞到一个可爱的小花园，那里正盛开着美丽的花朵，空气中散发着玫瑰和薰衣草的香味。“你看这里是不是很美呀？”一只可爱的小瓢虫问到。他不停的拍着自己带黑点的红翅膀飞来飞去；“气味多么香甜，花儿多么美丽呀！”“我住的地方比这儿好。”甲虫说到：“你说这里美？可怎么连一堆粪都没有。</td>
+      </tr>           
+      <tr>
+          <th style="text-align: center"><strong>Recordings</strong></th>
+          <th style="text-align: center"><strong>Baseline</strong></th>
+          <th style="text-align: center"><strong>LingTTS</strong></th>
+          <th style="text-align: center"><strong>ProsTTS</strong></th>
+          <th style="text-align: center"><strong>ComTTS</strong></th>
+          <th style="text-align: center"><strong>ParaTTS</strong></th>
+      </tr> 
+	<tr>
+            <td style="text-align: left"><audio src="samples/ori/42-8_2.wav" controls="" preload=""></audio></td>
+	          <td style="text-align: left"><audio src="samples/base/42-8_2.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/lingtts/42-8_2.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/prostts/42-8_2.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/comtts/42-8_2.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/paratts/42-8_2.wav" controls="" preload=""></audio></td>
+	</tr>
+
+      <tr>
+            <td style="text-align: left" colspan=6>"
+              3.3 一定是花儿在跳舞!"她说。于是小伊达爬下小床，悄悄地走到门口，向屋子里望去。啊，眼前的情景多么有趣呀！房子里没有灯光，月亮透过窗户把屋里照得就像是白天一样。所有的风信子和郁金香都在地板上排成行，花儿们围在一起，快乐地跳着舞，转圈的时候，长长的叶子互相挽着，就像手拉着手。钢琴前坐着一朵很大的百合花，她一会儿头歪向这边，一会儿又歪向那一边，随着音乐的节拍点着头。那些生病的花儿也爬了起来，快乐地跳起舞。
+              <br> * Inappropriate pause duration can be found in the Baseline.
+            </td>
+
+      </tr>         
+      <tr>
+          <th style="text-align: center"><strong>Recordings</strong></th>
+          <th style="text-align: center"><strong>Baseline</strong></th>
+          <th style="text-align: center"><strong>LingTTS</strong></th>
+          <th style="text-align: center"><strong>ProsTTS</strong></th>
+          <th style="text-align: center"><strong>ComTTS</strong></th>
+          <th style="text-align: center"><strong>ParaTTS</strong></th>
+      </tr>   
+	<tr>
+            <td style="text-align: left"><audio src="samples/ori/11-10_8.wav" controls="" preload=""></audio></td>
+	          <td style="text-align: left"><audio src="samples/base/11-10_8.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/lingtts/11-10_8.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/prostts/11-10_8.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/comtts/11-10_8.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/paratts/11-10_8.wav" controls="" preload=""></audio></td>
+	</tr>
+
+  <tr>
+    <td style="text-align: left" colspan=6>
+      3.4 不远处有三个年轻的甲虫小姐，他们看着他在偷偷的笑。“我从没见过这么美的小姐。”甲虫说到。于是甲虫便和其中的一位小姐结了婚。婚后的第三天问题来了，他得考虑妻子，可能还有孩子吃饭的问题。“我不能呆在这儿了。”他说到。“我要离开她们？”甲虫真的这么做了。
+    </td>
+</tr>         
+      <tr>
+          <th style="text-align: center"><strong>Recordings</strong></th>
+          <th style="text-align: center"><strong>Baseline</strong></th>
+          <th style="text-align: center"><strong>LingTTS</strong></th>
+          <th style="text-align: center"><strong>ProsTTS</strong></th>
+          <th style="text-align: center"><strong>ComTTS</strong></th>
+          <th style="text-align: center"><strong>ParaTTS</strong></th>
+      </tr>   
+	<tr>
+            <td style="text-align: left"><audio src="samples/ori/42-8_6.wav" controls="" preload=""></audio></td>
+	          <td style="text-align: left"><audio src="samples/base/42-8_6.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/lingtts/42-8_6.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/prostts/42-8_6.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/comtts/42-8_6.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/paratts/42-8_6.wav" controls="" preload=""></audio></td>
+	</tr>
+          
+      <tr>
+            <td style="text-align: left" colspan=6>3.5 野玫瑰张开了笑脸说："我觉得太阳光应该得到光荣奖和二等奖。他从太阳走到地面的速度是那么快，而且力量很大，使整个大自然都苏醒了，使树林变得更美丽了。"</td>
+      </tr>         
+      <tr>
+          <th style="text-align: center"><strong>Recordings</strong></th>
+          <th style="text-align: center"><strong>Baseline</strong></th>
+        <th style="text-align: center"><strong>LingTTS</strong></th>
+        <th style="text-align: center"><strong>ProsTTS</strong></th>
+        <th style="text-align: center"><strong>ComTTS</strong></th>
+        <th style="text-align: center"><strong>ParaTTS</strong></th>
+      </tr>   
+	<tr>
+            <td style="text-align: left"><audio src="samples/ori/28-11_10.wav" controls="" preload=""></audio></td>
+	          <td style="text-align: left"><audio src="samples/base/28-11_10.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/lingtts/28-11_10.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/prostts/28-11_10.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/comtts/28-11_10.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/paratts/28-11_10.wav" controls="" preload=""></audio></td>
+	</tr>
+          
+
+</tbody>
+</table>
+
+<h2>4. Samples of long paragraphs<a name="long_para"></a></h2>
+<!-- <h3>Convert the emotion expresssions from the source speaker to the neutral target speakers without emotional training data.</h3> -->
+<table>
+  <!-- <thead>
+    <tr>
+      <th style="text-align: center"><strong>Baseline</strong></th>
+      <th style="text-align: center"><strong>LingTTS</strong></th>
+      <th style="text-align: center"><strong>ProsTTS</strong></th>
+      <th style="text-align: center"><strong>ComTTS</strong></th>
+      <th style="text-align: center"><strong>ParaTTS</strong></th>
+    </tr>
+  </thead> -->
+  <tbody>
+
+      <tr>
+            <td style="text-align: left" colspan=5>4.1 “真是你吗？”哲学家说，“我从来没有想过人的影子会变成一个人再回来！”“请告诉我，我要付点什么！”身影说，“我讨厌欠债！”“你不可以这样说！”哲学家说，“你是自由的，我为你的幸福感到高兴！坐下，讲讲这些日子你是怎么过的，在南方我们对面那家人那里，你都看见了些什么！”“行，”身影说，坐了下去。“但是您要答应我，您不要对任何人讲我是您的身影！我在考虑订婚了，我满可以养活好几家子人！”“请放心吧！”哲学家说，“我不会告诉任何人您到底是谁，大丈夫说话算话！”“身影也说话算话！”身影说。真是奇怪，身影简直就是一个真人。他穿着讲究，它的靴子是漆皮的，帽子是压下去成一个平块儿的，还有那玺坠，那金项链和钻石戒指。“现在开始讲吧。”身影说。他用穿着漆皮靴子的腿踩在哲学家新身影的胳膊上，这也许是出于显示自己的傲气，或者是想紧紧地压住它。“您知道那是谁吗？”</td>
+      </tr>  
+      <tr>     
+            <th style="text-align: center"><strong>Baseline</strong></th>
+            <th style="text-align: center"><strong>ParaTTS</strong></th> 
+      </tr>
+	<tr>
+	      <td style="text-align: center"><audio src="samples/base/3103002.wav" controls="" preload=""></audio></td>
+            <!-- <td style="text-align: left"><audio src="samples/lingtts/3103002.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/prostts/3103002.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/comtts/3103002.wav" controls="" preload=""></audio></td> -->
+            <td style="text-align: center"><audio src="samples/paratts/3103002.wav" controls="" preload=""></audio></td>
+	</tr>
+
+
+	<tr>
+            <td style="text-align: left" colspan=5>4.2 干妈是一位高大、友善的女人，长着一副圆笑脸，头发都白了。她的几位女儿漂亮、颀长、苗条，打扮得体。和她们在一起的是一位表哥，他头发金黄，一副络腮胡，一身白衣服。他对贝特蒂的到来表示了特别大的好感。房间桌子上散放着许多书，还有乐谱和画本，阳台面向宽阔的湖面。向来开朗随和的路迪，现在却变得拘谨起来。他觉得时间过得真慢，但是贝蒂却兴致高涨，还说那位表哥是一位完美的绅士。“一个真正的牛皮大王！”路迪说。这是他第一次说出让贝蒂不舒服的话。那个英国小伙送给她一本书，是拜伦《锡永的囚徒》法文译本。“书是一本好书，”路迪说，“但是送书的主人是个纨绔公子，我不喜欢他。”从干妈那里回来后的两天，路迪去磨坊，看到了那个英国人，贝蒂还特别为他烧了一道鳟鱼，这道菜看上去很讲究。英国人跑来这儿干什么，贝蒂还如此招待他？路迪心里酸溜溜的。贝蒂看到他这副模样，却异常地高兴，感到好玩儿。越是这样，她越看清了路迪内心灵魂的优点和弱点。爱情是一场游戏，她现在正在玩弄路迪的感情。路迪越是阴沉着脸，她的眼里便有越多的笑意。其实，这是不对的。</td>
+      </tr>   
+      <tr>     
+            <th style="text-align: center"><strong>Baseline</strong></th>
+            <th style="text-align: center"><strong>ParaTTS</strong></th> 
+      </tr>     
+	<tr>
+	      <td style="text-align: center"><audio src="samples/base/2903002.wav" controls="" preload=""></audio></td>
+            <!-- <td style="text-align: left"><audio src="samples/lingtts/2903002.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/prostts/2903002.wav" controls="" preload=""></audio></td>
+            <td style="text-align: left"><audio src="samples/comtts/2903002.wav" controls="" preload=""></audio></td> -->
+            <td style="text-align: center"><audio src="samples/paratts/2903002.wav" controls="" preload=""></audio></td>
+	</tr>
+
+
+  <tr>
+    <td style="text-align: left" colspan=5> 
+      4.3 可怜的花儿，昨晚还挺美的，现在却全都谢了！小伊达说，为什么会这样呢？她向坐在沙发里的大学生问着。他是一位无忧无虑的大学生！为什么花儿今天这么难看！她又问，拿了一大束凋零了的花给他看。你知道花儿为什么会凋谢吗？大学生说，夜里花儿参加舞会了，所以它们才耷拉着脑袋！可是，花儿是不会跳舞的呀！小伊达说。会的，大学生说，天一黑下来，在我们睡了以后，它们便高高兴兴地跳个不停，差不多夜夜有舞会！孩子能参加这种舞会吗？当然，大学生说，小不点的春黄菊和铃兰花都参加！最漂亮的花通常在什么地方跳舞呢？小伊达问。夏天住在大王宫里那漂亮的花儿可多了！告诉你，那里可是真有舞会的！昨天我去过那个花园，小伊达说，但树叶子都落光了，一朵花也没有了！花儿都到哪里去啦？现在它们都住进宫殿里去了
+    </td>
+</tr>  
+<tr>     
+    <th style="text-align: center"><strong>Baseline</strong></th>
+    <th style="text-align: center"><strong>ParaTTS</strong></th> 
+</tr>
+<tr>
+<td style="text-align: center"><audio src="samples/base/0503002.wav" controls="" preload=""></audio></td>
+    <td style="text-align: center"><audio src="samples/paratts/0503002.wav" controls="" preload=""></audio></td>
+</tr>
+
+
+<tr>
+    <td style="text-align: left" colspan=5>
+      4.4 我已经这样做了好多夜晚了。我现在讲的这些就是我听到的那些原本的东西。我给大家看的只是写在纸上的若干零散素材。第一夜“昨夜，”这是月亮的原话，我经过印度时，我把身影投进恒河。这时，从树林深处走出一位印度姑娘，她是那样轻巧，同时又很丰满。通过皮肤可以看到她的思想。带刺的枝蔓划破了她的拖鞋，她匆匆向前走去。姑娘手中拿着一盏点燃的灯。她走近河边，把灯放在水里，灯便顺流漂了下去。
+    </td>
+</tr>   
+<tr>     
+    <th style="text-align: center"><strong>Baseline</strong></th>
+    <th style="text-align: center"><strong>ParaTTS</strong></th> 
+</tr>     
+<tr>
+<td style="text-align: center"><audio src="samples/base/0503006.wav" controls="" preload=""></audio></td>
+    <td style="text-align: center"><audio src="samples/paratts/0503006.wav" controls="" preload=""></audio></td>
+</tr>
+
+
+
+
+<tr>
+  <td style="text-align: left" colspan=5>
+    4.5 从哥本哈根只有一条铁路通往科索。这条铁路是一串珍珠，欧洲有好多串这样的珍珠。最昂贵的珍珠是：巴黎、伦敦、维也纳、那不勒斯。在哥本哈根和科索之间有多少颗珍珠呢？算一算，一共有六颗。它们在我们的思想中发着闪闪的光。腓德烈六世的宫殿建在山坡上，它是厄伦施莱尔儿时的家。在松诺玛肯树林，住着拉贝克和他的妻子伽玛。在他们好客的屋檐下，聚集着忙碌的哥本哈根当代的学者。这是知识界的家。现在！它仍是学者之家，是病花草的温房！没有活力绽放的花苞，在这儿能得到保护，直到开花，结籽。这个精神生活之家，散发着生机和活力。这里，现在居住着心智最弱的人。有个时候，这是有头脑的人物会面的地方。在这个“菲勒蒙和包喀斯的茅屋”里，心灵的火焰仍在燃烧。我们现在看到了赫洛尔泉边的国王墓群的城市，古老的罗斯基勒。教堂瘦长的塔尖高高地钻上天空，影子倒映在伊在海湾的水里。我们在这儿只想寻找一座坟墓，在珍珠的闪光中来审视它。
+  </td>
+</tr>   
+<tr>     
+  <th style="text-align: center"><strong>Baseline</strong></th>
+  <th style="text-align: center"><strong>ParaTTS</strong></th> 
+</tr>     
+<tr>
+<td style="text-align: center"><audio src="samples/base/0603002.wav" controls="" preload=""></audio></td>
+  <td style="text-align: center"><audio src="samples/paratts/0603002.wav" controls="" preload=""></audio></td>
+</tr>
+
+
+
+  </tbody>
+</table>
+
+
+<h2>5. Samples of extra-long paragraphs<a name="extra_long_para"></a></h2>
+<!-- <h3>Convert the emotion expresssions from the source speaker to the neutral target speakers without emotional training data.</h3> -->
+<table>
+  <!-- <thead>
+    <tr>
+      <th style="text-align: center"><strong>Baseline</strong></th>
+      <th style="text-align: center"><strong>ParaTTS</strong></th>
+    </tr>
+  </thead> -->
+  <tbody>
+
+      <tr>
+            <td style="text-align: left" colspan=5>5.1 两个姑娘。你曾经看到过一位姑娘没有？这也就是说铺路工人所谓的一位姑娘。她是一种把石头打进土里去的器具。她完全是由木头做成的，下面宽，并且套着几个铁箍。她的上部窄小，有一根棍子穿进去，这就是她的双臂。在放工具的那个屋子里就有这么两个姑娘。她们是跟铲子、卷尺和独轮车住在一起。它们之间流传着一个谣言，说姑娘不再叫做姑娘，而要叫做手槌了。在铺路工人的字眼中，这是对我们从古时起就叫做姑娘的东西起的一个最新、而且也是最正确的名词。在我们人类中间有一种所谓自由女子，比如私立学校的校长、接生娘娘、能用一条腿站着表演的舞蹈家、时装专家、护士等。工具房里的这两位姑娘也把自己归到这类妇女的行列中去。她们是路政局的姑娘。她们决不放弃这个古老的好名称，而让自己被叫做手槌。姑娘是人的称号，她们说，手槌不过是一种物件。我们决不能让人叫作物件这是一种侮辱。我的未婚夫会跟我闹翻的，跟打桩机订了婚的那个顶年轻的姑娘说。打桩机是一个大器具。他能把许多桩打进地里去，因此他是大规模地做姑娘小规模地做的工作。他把我当做一个姑娘才和我订婚，假如我是一个手槌，他是不是还愿意娶我就成了问题。因此我决不改变我的名字。我呢，我宁愿我的两只手折断。年长的那位说。不过，独轮车却有不同的见解，而独轮车却是一个重要的人物，他觉得自己是一辆马车的四分之一，因为它是凭一只轮子走路。我得告诉你们，姑娘这个名称是够平常的了，一点也没手槌这个名称漂亮，因为有这个名字你就可以进入到印章的行列中去。请你想想官印吧，它盖上一个印，就产生法律的效力！要是我处于你们的地位，我宁愿放弃姑娘这个名称。不成，我不会幼稚到干这种事情！年长的那一位说。你们一定没有听到过所谓欧洲的必需品这种东西吧！诚实的老卷尺说。一个人应该适应他的时代和环境。如果法律说姑娘应该改成手槌，那么你就得叫做手槌。一切事情总得有一个尺度！不成，如果必须改变的话，年轻的那一位说，我宁愿改称为小姐，最低限度小姐还带一点姑娘的气味。我宁愿给劈做柴烧。年长的那位姑娘说。最后他们一同去工作。那两位姑娘乘车子因为她们被放在独轮车上。这是一种优待。不过她们仍然被叫做手槌。姑！当她们在铺路石上颠簸着的时候说，姑！她们几乎把姑娘两字整个念出来了，不过她们临时中断，把后面的一个字吞下去了，因为她们觉得没有理睬的必要。她们一直把自己叫做姑娘，同时称赞过去的那些好日子：在那些日子里一切东西都有它们正确的名字，姑娘就叫做姑娘。她们也就成了一对老姑娘，因为那个大器具打桩机真的跟年轻的那位解除了婚约，他不愿意跟一个手槌有什么关系。</td>
+      </tr>        
+      <tr>
+            <th style="text-align: center"><strong>Baseline</strong></th>
+            <th style="text-align: center"><strong>ParaTTS</strong></th>
+      </tr>
+	<tr>
+	      <td style="text-align: center"><audio src="samples/base/7.wav" controls="" preload=""></audio></td>
+            <td style="text-align: center"><audio src="samples/paratts/7.wav" controls="" preload=""></audio></td>
+	</tr>
+
+
+  <tr>
+    <td style="text-align: left" colspan=5>
+      5.2 小小的绿东西。窗子上有一株绿玫瑰花。不久以前它还是一副青春焕发的样子，但是现在它却现出了病容，在害某种病。它身上有一批客人在一口一口地把它吃掉。要不是因为这个缘故，这一群穿着绿制服的朋友们倒是蛮好看的。我和这些客人中的一位谈过话。他的年纪还不过三天，但是已经是一个老爷爷了。你知道他讲过什么话吗？他讲的全是真话。他讲着关于他自己和这一群朋友的事情。我们是世界生物中一个最了不起的队伍。在温暖的季节里，我们生出活泼的小孩子。天气非常好，我们立刻就订了婚，马上举行婚礼。天气冷的时候，我们就生起蛋来。小家伙在那里面睡得才舒服哩。最聪明的动物是蚂蚁。我们非常尊敬他们。他们研究和打量我们，但是并不马上把我们吃掉，而是把我们的蛋搬走，放在他们家族的共同蚁窟里的最低的一层楼上，同时在我们身上打下标记和号数，把我们一个挨着一个地、一层堆上一层地排好，以便每天能有一个新的生物从蛋里孵出来，然后就把我们关进栅栏里，捏着我们的后腿，挤出我们的奶，直到我们死去为止。这可是痛快啦！他们送我们一个最好听的称号：甜蜜的小奶牛！一切具有蚂蚁这种知识的动物都叫我们这个名字。只有人是例外这对我们是一种极大的侮辱，气得我们完全失去了甜蜜性。你能不能写点文章来反对这事儿，叫这些人能懂得一点道理呢？他们那样傻气地望着我们，绷着脸，用那样生气的眼光望着我们，而这只不过是因为我们把玫瑰叶子吃掉了，但是他们自己却吃掉一切活的东西，一切绿色的和会生长的东西。他们替我们起些最下贱的、最丑恶的名字。噢，那真使我作呕！我说不出口，最低限度在穿着制服时说不出口，而我是永远穿着制服的。我是在一个玫瑰树的叶子上出生的。我和整个队伍全靠玫瑰叶子过活，但是玫瑰叶子却在我们身体里面活着我们属于高一等的动物。人类憎恨我们，他们拿肥皂泡来歼灭我们，这种东西的味道真难受！我想我闻到过它！你并不是为洗涤而生下来的，因此被洗涤一番真是可怕！人啊！你用严厉和肥皂泡的眼光来看我们，请你想想我们在大自然中的地位，以及我们生蛋和养孩子的天才的机能吧！我们得到祝福：愿你们生长和繁殖！我们生在玫瑰花里，我们死在玫瑰花里，我们整个一生是一首诗。请你不要把那种最可怕的、最丑恶的名字加到我们身上来吧我们说不出口，也叫不出来的那种名字！请把我们叫做蚂蚁的奶牛、玫瑰树的队伍、小小的绿东西吧！我作为一个人站在一旁，望着这株玫瑰，望着这些小小的绿东西他们的名字我不愿意喊出来，也不愿意侮辱一个玫瑰中的公民，一个有许多卵子和小孩的大家族。本来我是带着肥皂水和恶意来的，打算喷他们一通。现在我打算把这肥皂水吹成泡，然后凝望着它们的美，可能每个泡里面会有一篇童话的。泡越长越大，泛出各种颜色。泡里好像都藏着珍珠。泡浮起来，翱翔着，飞到一扇门上，于是爆裂了。但是这扇门忽然开了！童话妈妈站在门口。是的，那些小小的绿东西我不说出他们的名字！关于他们的事情，童话妈妈讲的要比我好得多。蚜虫！童话妈妈说。我们对任何东西应该叫出它正确的名字。如果在一般场合下不敢叫，我们至少可以在童话中叫的。
+        /td>
+</tr>        
+<tr>
+    <th style="text-align: center"><strong>Baseline</strong></th>
+    <th style="text-align: center"><strong>ParaTTS</strong></th>
+</tr>
+<tr>
+<td style="text-align: center"><audio src="samples/base/10.wav" controls="" preload=""></audio></td>
+    <td style="text-align: center"><audio src="samples/paratts/10.wav" controls="" preload=""></audio></td>
+</tr>
+
+  </tbody>
+</table>
+
+
+
+<h2 id="summary">6. Summary<a name="summary"></a></h2>
+<p> In this research, we propose to use a new, paragraph-based, end-to-end TTS model to model linguistic and prosodic information embedded in paragraph text with the corresponding acoustic data. We design both linguistics-aware and prosody-aware networks to learn the information via a paragraph encoder and its multi-head attention mechanism. Additionally, a sentence-position network is used to exploit the inter-sentence information in the paragraph. Trained on a storytelling, audio-book corpus (4.08 hours), recorded by a female Mandarin speaker, experimental results show that the proposed new paragraph-based model can produce TTS speech better than the conventional sentence-based TTS baseline system, both objectively and subjectively. The new model can learn the cross-sentence information well, e.g., the break durations between adjacent sentences, and generalize the learned information to longer or much longer paragraphs than those used in the training corpus.
+ </p>
+
+
+<!-- <h2 id="refs">7. References<a name="refs"></a></h2>
+<a name="ref1"></a>
+  <a href="https://arxiv.org/abs/2106.10831">[1] Cong, Jian, Shan Yang, Lei Xie and Dan Su. “Glow-WaveGAN: Learning Speech Representations from GAN-based Variational Auto-Encoder For High Fidelity Flow-based Speech Synthesis.” Interspeech (2021).
+  </a>
+<a name="ref2"></a>
+  <a href="https://arxiv.org/abs/2106.10831">[2] E. Perez, F. Strub, H. De Vries, V. Dumoulin, and A. Courville, “FiLM: Visual reasoning with a general conditioning layer,” in AAAI, vol. 32, no. 1, 2018
+</a> -->
+
+  <br>
+  <hr>
+  <br>
+      <footer class="site-footer">
+            <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com/">GitHub Pages</a>.</span>
+      </footer>
+    </section>
+</body></html>
+
